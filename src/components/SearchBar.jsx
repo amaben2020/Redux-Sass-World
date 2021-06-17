@@ -1,11 +1,23 @@
 import React from "react";
-
+import "./../SASS/components/searchbar.scss";
+import SearchBarDescription from "./SearchBarDescription";
+import Sort from "./Sort";
 const SearchBar = () => {
 	return (
-		<div>
+		<div className="searchbar">
 			<form>
-				<input type="search" />
+				<input
+					className="searchbar__input"
+					type="search"
+					placeholder="search products"
+				/>
 			</form>
+			<SearchBarDescription
+				color="black"
+				fontStyle="italic"
+				text="Search and filter based on your needs ..."
+			/>
+			<Sort />
 		</div>
 	);
 };

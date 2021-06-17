@@ -29,6 +29,10 @@
     flex-direction: column;
   }
 }
+.section__heading {
+  display: flex;
+  text-align: center;
+}
 .section__header {
   padding: 1rem;
 }

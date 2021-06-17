@@ -1,0 +1,22 @@
+.searchbar {
+	box-shadow: 0 1rem 1.8 rgb(77, 77, 77);
+	&__input {
+		width: 20rem;
+		height: 3rem;
+		border-radius: 3px;
+		border: 1px solid gray;
+
+		&::placeholder {
+			font-style: italic;
+			text-align: center;
+		}
+
+		&:focus {
+			border: 1px solid gray;
+		}
+	}
+
+	&__description {
+		padding: 2rem;
+	}
+}

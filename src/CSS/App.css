@@ -1,4 +1,6 @@
 @import url(./animations/animations.scss);
+@import url(./components//searchbar.scss);
+@import url(./components/dropddown.scss);
 .layout {
   max-width: 1200px;
 }
@@ -29,6 +31,10 @@
   .section__card {
     flex-direction: column;
   }
+}
+.section__heading {
+  display: flex;
+  text-align: center;
 }
 .section__header {
   padding: 1rem;

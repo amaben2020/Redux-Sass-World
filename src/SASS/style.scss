@@ -29,6 +29,11 @@
 		}
 	}
 
+	&__heading {
+		display: flex;
+		text-align: center;
+	}
+
 	&__header {
 		padding: 1rem;
 	}

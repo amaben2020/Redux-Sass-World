@@ -1,7 +1,7 @@
 import React from "react";
 import "./../SASS/components/button.scss";
 const Button = (props) => {
-	console.log(props);
+	console.log("rerender");
 	return (
 		<div className="button">
 			<button

@@ -1,0 +1,19 @@
+.searchbar {
+  box-shadow: 0 1rem 1.8 #4d4d4d;
+}
+.searchbar__input {
+  width: 20rem;
+  height: 3rem;
+  border-radius: 3px;
+  border: 1px solid gray;
+}
+.searchbar__input::placeholder {
+  font-style: italic;
+  text-align: center;
+}
+.searchbar__input:focus {
+  border: 1px solid gray;
+}
+.searchbar__description {
+  padding: 2rem;
+}
