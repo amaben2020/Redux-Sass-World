@@ -1,0 +1,34 @@
+.layout {
+  max-width: 1200px;
+}
+
+.btn-primary {
+  background-color: black;
+  color: antiquewhite;
+  outline: none;
+}
+.btn-primary:hover {
+  background-color: white;
+  color: black;
+}
+
+.section {
+  text-align: center;
+}
+.section__card {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  transition: all 0.2s;
+}
+.section__card__sidebar {
+  margin: 2rem;
+}
+@media only screen and (max-width: 56.25rem) {
+  .section__card {
+    flex-direction: column;
+  }
+}
+.section__header {
+  padding: 1rem;
+}

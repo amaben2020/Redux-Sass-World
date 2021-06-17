@@ -1,0 +1,75 @@
+.card {
+  height: 30rem;
+  width: 25rem;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  margin: 1.2rem;
+  flex: 0 0 auto;
+  border: 1px solid #d4d4d4;
+  box-shadow: 0 0.2rem 0.7rem #b1aaaa;
+  transition: all 0.2s;
+  animation: move 10s linear infinite;
+  animation-name: move-right;
+  animation-iteration-count: 9;
+}
+.card:hover {
+  transform: scaleY(1.01);
+  box-shadow: 0 1rem 1.8 #4d4d4d;
+}
+.card__image {
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  flex: 0.9 0 0;
+}
+.card__holder {
+  background-color: rgba(224, 24, 24, 0.925);
+  width: 6rem;
+  height: 3rem;
+  position: absolute;
+  top: 5%;
+  border-radius: 0 1.5rem 1.5rem 0;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+.card__holder:hover {
+  background-color: rgba(128, 0, 128, 0.925);
+}
+.card__holder--text {
+  color: #fff;
+  margin: 1rem;
+  font-weight: 700;
+}
+.card__holder--text:hover {
+  color: black;
+}
+.card__promo {
+  color: black;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.card__price {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  font-size: 1.2rem;
+}
+.card__price-1, .card__price-2 {
+  padding: 0.3rem;
+}
+
+@keyframes move-right {
+  0% {
+    transform: translate(0px);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(100px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(200px);
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,17 @@
+.button-btn {
+  padding: 1rem 1.8rem;
+  border: 1.5px solid black;
+  font-weight: 500;
+  font-size: 1.15rem;
+  box-shadow: 0 0.2rem 1rem #afafaf;
+  background: black;
+  color: #fff;
+  cursor: pointer;
+}
+.button-btn:hover {
+  color: black;
+  background: #fff;
+  transition: all 0.4s;
+  font-size: 1.2rem;
+  box-shadow: 0 0.5rem 1rem #afafaf;
+}

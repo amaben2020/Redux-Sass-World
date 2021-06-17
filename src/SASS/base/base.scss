@@ -1,0 +1,27 @@
+:root {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+
+	$bp-largest: 75rem; // 1200px/16px
+	$bp-large: 68.75rem; // 1100px/16px
+	$bp-medium: 56.25rem; // 900px/16px
+}
+
+html {
+	font-size: 72.5%; //1rem = 10px so 10px/16px = 0.625 => 62.5%
+}
+
+body {
+	font-family: "Helvetica", "sans-serif";
+	/* font-size: 16px; */
+	line-height: 1.7;
+	color: #777;
+	box-sizing: border-box;
+}
+
+//Change the color to green and white background
+::selection {
+	background-color: #777;
+	color: #fff;
+}

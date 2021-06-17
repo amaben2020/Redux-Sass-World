@@ -1,0 +1,164 @@
+@import url(./animations/animations.scss);
+.layout {
+  max-width: 1200px;
+}
+
+.btn-primary {
+  background-color: black;
+  color: antiquewhite;
+  outline: none;
+}
+.btn-primary:hover {
+  background-color: white;
+  color: black;
+}
+
+.section {
+  text-align: center;
+}
+.section__card {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  transition: all 0.2s;
+}
+.section__card__sidebar {
+  margin: 2rem;
+}
+@media only screen and (max-width: 56.25rem) {
+  .section__card {
+    flex-direction: column;
+  }
+}
+.section__header {
+  padding: 1rem;
+}
+
+.card {
+  height: 30rem;
+  width: 25rem;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  margin: 1.2rem;
+  flex: 0 0 auto;
+  border: 1px solid #d4d4d4;
+  box-shadow: 0 0.2rem 0.7rem #b1aaaa;
+  transition: all 0.2s;
+  animation: move 10s linear infinite;
+  animation-name: move-right;
+  animation-iteration-count: 9;
+}
+.card:hover {
+  transform: scaleY(1.01);
+  box-shadow: 0 1rem 1.8 #4d4d4d;
+}
+.card__image {
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  flex: 0.9 0 0;
+}
+.card__holder {
+  background-color: rgba(224, 24, 24, 0.925);
+  width: 6rem;
+  height: 3rem;
+  position: absolute;
+  top: 5%;
+  border-radius: 0 1.5rem 1.5rem 0;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+.card__holder:hover {
+  background-color: rgba(128, 0, 128, 0.925);
+}
+.card__holder--text {
+  color: #fff;
+  margin: 1rem;
+  font-weight: 700;
+}
+.card__holder--text:hover {
+  color: black;
+}
+.card__promo {
+  color: black;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.card__price {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  font-size: 1.2rem;
+}
+.card__price-1, .card__price-2 {
+  padding: 0.3rem;
+}
+
+@keyframes move-right {
+  0% {
+    transform: translate(0px);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(100px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(200px);
+    opacity: 0.5;
+  }
+}
+.navbar {
+  display: flex;
+  align-content: center;
+  color: #f4f4f4;
+  background-color: #303030;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1.5rem;
+  box-shadow: 0 1rem 1.3rem #e9e9e9;
+}
+.navbar__items {
+  display: flex;
+  align-items: center;
+}
+.navbar__items-1, .navbar__items-2, .navbar__items-3, .navbar__items-4 {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  padding: 1rem;
+  position: relative;
+}
+.navbar__items-1:hover, .navbar__items-2:hover, .navbar__items-3:hover, .navbar__items-4:hover {
+  color: gray;
+  cursor: pointer;
+}
+
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 72.5%;
+}
+
+body {
+  font-family: "Helvetica", "sans-serif";
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: #777;
+  color: #fff;
+}
+
+.layout {
+  max-width: 120rem;
+  padding: 2rem;
+}
