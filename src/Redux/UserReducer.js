@@ -1,30 +1,28 @@
 import {
-	FETCH_SINGLE_PRODUCT_ERROR,
-	FETCH_SINGLE_PRODUCT_LOADING,
-	FETCH_SINGLE_PRODUCT_SUCCESS,
-} from "../constants/SingleProduct";
+	ADD_USER_ERROR,
+	ADD_USER_LOADING,
+	ADD_USER_SUCCESS,
+} from "./constants/UserConstants";
 
 const initialState = {
-	singleProduct: [],
-	// loading: false,
-	// success: false,
+	user: [],
 };
 
 export const singleProductReducer = (state = initialState, action = {}) => {
 	switch (action.type) {
-		case FETCH_SINGLE_PRODUCT_LOADING:
+		case ADD_USER_LOADING:
 			return {
 				loading: true,
 			};
 
-		case FETCH_SINGLE_PRODUCT_SUCCESS:
+		case ADD_USER_SUCCESS:
 			return {
 				loading: false,
 				success: true,
 				singleProduct: action.payload,
 			};
 
-		case FETCH_SINGLE_PRODUCT_ERROR:
+		case ADD_USER_ERROR:
 			return {
 				loading: false,
 

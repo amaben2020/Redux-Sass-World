@@ -21,18 +21,12 @@ const ProductScreen = ({ match }) => {
 	useEffect(() => {
 		let isFetched = true;
 		if (loading) {
-			return <p>Loading ....</p>;
+			return <Loading />;
 		} else if (isFetched && !success) {
 			dispatch(fetchSingleProduct(id));
 		}
-		// dispatch(fetchSingleProduct(id));
-		localStorage.setItem("product", JSON.stringify(singleProduct));
-	});
+	}, [dispatch, success]);
 	console.log(singleProduct);
-
-	useEffect(() => {
-		localStorage.getItem("product", JSON.stringify(singleProduct));
-	});
 
 	// const fetchProduct = () => {
 	// 	const id = match.params.id;
@@ -45,7 +39,7 @@ const ProductScreen = ({ match }) => {
 	// 	const id = match.params.id;
 	// 	return axios
 	// 		.get(`https://fakestoreapi.com/products/${id}`)
-	// 		.then((res) => res.data);
+	// 		.then((res) => res.singleProduct?);
 	// };
 
 	// const { data, isLoading, isError } = useQuery("product", fetchProduct);
@@ -63,34 +57,36 @@ const ProductScreen = ({ match }) => {
 	return (
 		<div className="product">
 			<Container>
-				{singleProduct.title}
-				{/* <Row>
+				<Row>
 					<Col lg={6} md={6}>
 						<div className="singleProduct">
 							<h1 className="singleProduct__header">
-								{data.title} - {data.category}
+								{singleProduct?.title} - {singleProduct?.category}
 							</h1>
-							<img src={data.image} className="singleProduct__image" />
+							<img
+								src={singleProduct?.image}
+								className="singleProduct__image"
+							/>
 						</div>
 					</Col>
 
 					<Col lg={3} md={3}>
 						<div className="singleProduct__description">
-							<p>{data.description}</p>{" "}
+							<p>{singleProduct?.description}</p>{" "}
 						</div>
 					</Col>
 
 					<Col lg={3} md={3}>
 						<div className="singleProduct__bigcard">
 							<h2> Cart Items </h2>
-							price: ${data.price}
+							price: ${singleProduct?.price}
 							<button className="singleProduct__bigcard--button">
 								{" "}
 								Add To Cart
 							</button>
 						</div>
 					</Col>
-				</Row> */}
+				</Row>
 			</Container>
 		</div>
 	);

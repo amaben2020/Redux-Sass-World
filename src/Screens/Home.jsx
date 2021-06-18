@@ -17,29 +17,17 @@ const Home = () => {
 		return <Loading />;
 	}
 
-	// const dispatch = useDispatch();
-	// const post = useSelector((state) => state.post);
-	// const { loading, error, posts, success } = post;
-	// console.log("Almighty Redux data", posts);
+	// const getPosts = () =>
+	// 	axios
+	// 		.get("https://fakestoreapi.com/products?sort=desc")
+	// 		.then((res) => res.data);
 
-	// React.useEffect(() => {
-	// 	if (success) {
-	// 		dispatch(postFetch());
-	// 	}
-	// }, [dispatch]);
+	// const { data, isLoading } = useQuery("posts", getPosts);
 
-	// if (loading) {
-	// 	return (
-	// 		<div>
-	// 			{" "}
-	// 			<p>Loading.....</p>
-	// 		</div>
-	// 	);
+	// if (isLoading) {
+	// 	return <Loading />;
 	// }
 
-	// if (error) {
-	// 	return <p>Ooooops......</p>;
-	// }
 	return (
 		<Container style={{ paddingTop: "50px" }} fluid className="section">
 			{" "}
@@ -52,10 +40,7 @@ const Home = () => {
 						))}
 				</Col>{" "}
 				<Col className="section__sidebar" lg={3} xs={12} md={4}>
-					{/* {posts.map((p) => (
-						<p> {p.title}</p>
-					))} */}
-					<SearchBar />
+					<SearchBar sort={data} />
 				</Col>
 			</Row>
 		</Container>
