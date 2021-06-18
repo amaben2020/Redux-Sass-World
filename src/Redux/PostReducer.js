@@ -18,6 +18,7 @@ export const postReducer = (state = { initialState }, action = {}) => {
 			return {
 				...state,
 				loading: false,
+				success: true,
 				posts: action.payload,
 			};
 		case FETCH_POST_ERROR:

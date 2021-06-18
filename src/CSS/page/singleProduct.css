@@ -1,0 +1,33 @@
+.singleProduct {
+  align-items: center;
+  padding-top: 5rem;
+}
+.singleProduct__header {
+  padding-bottom: 3rem;
+}
+.singleProduct__image {
+  width: 50%;
+  height: 30vh;
+  margin-left: 7vw;
+}
+.singleProduct__description {
+  width: 90%;
+  font-size: 1.3rem;
+  padding-top: 5rem;
+}
+.singleProduct__bigcard {
+  height: 40vh;
+  width: 90%;
+  border: 1px solid rgba(0, 0, 0, 0.74);
+  box-shadow: 0 1rem 1.8 #4d4d4d;
+  position: relative;
+  padding-top: 5rem;
+}
+.singleProduct__bigcard--button {
+  padding: 1rem 1.3rem;
+  color: #fff;
+  outline: none;
+  background: black;
+  position: absolute;
+  top: 65%;
+}

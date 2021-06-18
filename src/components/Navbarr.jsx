@@ -1,9 +1,10 @@
 import DropDown from "./DropDown";
 import React from "react";
-import { NavDropdown } from "react-bootstrap";
+import { NavDropdown, Nav } from "react-bootstrap";
 import "./../SASS/components/navbar.scss";
 import { FaCartArrowDown } from "react-icons/fa";
-
+import { LinkContainer } from "react-router-bootstrap";
+import { Link } from "react-router-dom";
 const Navbarr = () => {
 	const [show, setShow] = React.useState(false);
 	const showDropdown = () => {
@@ -21,11 +22,29 @@ const Navbarr = () => {
 
 	return (
 		<div className="navbar">
+			<Link to="/">
+				<div className="navbar__logo"> </div>
+			</Link>
 			<ul className="navbar__items">
 				<li className="navbar__items-1">Home</li>
 				<li className="navbar__items-2">About</li>
 				<li className="navbar__items-3">Courses</li>
-				<li className="navbar__items-4">Sign Up</li>
+				{/* <LinkContainer to="/signup">
+					<Nav.Link style={{ color: "white" }} >
+						Sign Up
+					</Nav.Link>
+				</LinkContainer> */}
+				<li className="navbar__items-4">
+					{" "}
+					<Link
+						style={{ color: "white", textDecoration: "none" }}
+						className="navbar__items-4"
+						to="/signup"
+					>
+						{" "}
+						Sign Up{" "}
+					</Link>{" "}
+				</li>
 				<NavDropdown
 					style={{ color: "white" }}
 					show={show}

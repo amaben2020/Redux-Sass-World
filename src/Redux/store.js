@@ -3,10 +3,12 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { postReducer } from "./PostReducer";
 import { toggleReducer } from "./ToggleReducer";
+import { singleProductReducer } from "./singleProduct/singleProductReducer";
 
 const reducer = combineReducers({
 	post: postReducer,
 	toggleFunction: toggleReducer,
+	product: singleProductReducer,
 });
 
 const middleware = [thunk];

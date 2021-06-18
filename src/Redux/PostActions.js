@@ -9,13 +9,13 @@ export const postFetch = () => async (dispatch) => {
 	dispatch({ type: FETCH_POST_LOADING });
 
 	try {
-		const res = await axios.get("http://localhost:3000/comments");
-		dispatch({ type: FETCH_POST_SUCCESS, payload: res.data });
+		dispatch({ type: FETCH_POST_LOADING });
+		// const res = await axios.get("https://fakestoreapi.com/products");
+		// dispatch({ type: FETCH_POST_SUCCESS, payload: res.data });
 
-		// const { data } = await axios
-		// 	.get("http://localhost:4000/comments")
-		// 	.then((res) => res.data);
-		// dispatch({ type: FETCH_POST_SUCCESS, payload: data });
+		await axios
+			.get("https://fakestoreapi.com/products")
+			.then((res) => dispatch({ type: FETCH_POST_SUCCESS, payload: res.data }));
 	} catch (error) {
 		dispatch({ type: FETCH_POST_ERROR, payload: error });
 	}

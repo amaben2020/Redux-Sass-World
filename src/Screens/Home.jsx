@@ -5,7 +5,7 @@ import axios from "axios";
 import { useQuery } from "react-query";
 import { useDispatch, useSelector } from "react-redux";
 import { postFetch } from "../Redux/PostActions.js";
-
+import Loading from "./../components/messages/Loading";
 import SearchBar from "./../components/SearchBar";
 const Home = () => {
 	const getPosts = () =>
@@ -13,13 +13,19 @@ const Home = () => {
 
 	const { data, isLoading } = useQuery("posts", getPosts);
 
+	if (isLoading) {
+		return <Loading />;
+	}
+
 	// const dispatch = useDispatch();
 	// const post = useSelector((state) => state.post);
-	// const { loading, error, posts } = post;
+	// const { loading, error, posts, success } = post;
 	// console.log("Almighty Redux data", posts);
 
 	// React.useEffect(() => {
-	// 	dispatch(postFetch());
+	// 	if (success) {
+	// 		dispatch(postFetch());
+	// 	}
 	// }, [dispatch]);
 
 	// if (loading) {
@@ -40,11 +46,14 @@ const Home = () => {
 			<h1 className="section__header">Top Products</h1>{" "}
 			<Row>
 				<Col lg={9} xs={12} md={8} className="section__card">
-					{data && data.map((products) => <Card products={products} />)}
+					{data &&
+						data.map((products) => (
+							<Card key={products.id} products={products} />
+						))}
 				</Col>{" "}
 				<Col className="section__sidebar" lg={3} xs={12} md={4}>
 					{/* {posts.map((p) => (
-						<p> {p.body}</p>
+						<p> {p.title}</p>
 					))} */}
 					<SearchBar />
 				</Col>

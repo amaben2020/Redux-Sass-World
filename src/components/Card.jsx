@@ -3,9 +3,25 @@ import "./../SASS/components/card.scss";
 import image from "./../images/alienware.jpg";
 import Button from "./Button";
 import { Link } from "react-router-dom";
-const Card = ({ products }) => {
+import { useQuery } from "react-query";
+import { useParams } from "react-router";
+import axios from "axios";
+const Card = ({ products, match }) => {
+	const id = products.id;
+
+	// const getSingleProduct = () => {
+	// 	axios
+	// 		.get(`https://fakestoreapi.com/products/${id}`)
+	// 		.then((res) => res.data);
+	// };
+
+	// const { data, isFetching, isLoading } = useQuery(
+	// 	"singleProduct",
+	// 	getSingleProduct
+	// );
+
 	return (
-		<Link to="/product" style={{ textDecoration: "none" }}>
+		<Link to={`/product/${id}`} style={{ textDecoration: "none" }}>
 			<div className="card">
 				<div className="card__holder">
 					<p className="card__holder--text">{products.category}</p>
