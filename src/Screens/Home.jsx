@@ -9,6 +9,7 @@ import Loading from "./../components/messages/Loading";
 import SearchBar from "./../components/SearchBar";
 import Hero from "../components/Hero";
 import Category from "../components/Category";
+import Jewelry from "../components/Jewelry";
 const Home = () => {
 	const [query, setQuery] = useState("");
 	const [sortBy, setSortBy] = useState("price");
@@ -64,7 +65,7 @@ const Home = () => {
 			<Row>
 				<Col lg={9} xs={12} md={8} className="section__card">
 					{filteredProductData &&
-						filteredProductData.map((product) => (
+						filteredProductData?.map((product) => (
 							<Card key={product.id} products={product} />
 						))}
 				</Col>{" "}
@@ -84,6 +85,7 @@ const Home = () => {
 			</Row>
 			<Row lg={12}>
 				<Category />
+				<Jewelry />
 			</Row>
 		</Container>
 	);
