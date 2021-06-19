@@ -10,6 +10,8 @@ import SearchBar from "./../components/SearchBar";
 import Hero from "../components/Hero";
 const Home = () => {
 	const [query, setQuery] = useState("");
+	const [sortBy, setSortBy] = useState("asc");
+	const [orderBy, setOrderBy] = useState("price");
 
 	const getPosts = () =>
 		axios.get("https://fakestoreapi.com/products").then((res) => res.data);
@@ -31,16 +33,22 @@ const Home = () => {
 	// 	};
 	// }, []);
 
-	const filteredProductData = Object.entries(products).filter(
-		([key, product]) => {
+	const filteredProductData = Object.values(products)
+		.filter((product) => {
 			return (
 				product.category.toLowerCase().includes(query.toLowerCase()) ||
 				product.title.toLowerCase().includes(query.toLowerCase())
 			);
-		}
-	);
+		})
+		.sort((a, b) => {
+			//order is a variable that ordersBy higher first value
+			let order = orderBy === "asc" ? 1 : -1;
+			console.log(order);
+			console.log(sortBy);
+			return a[sortBy] < b[sortBy] ? -1 * order : 1 * order;
+		});
 
-	console.log(filteredProductData[1]);
+	console.log(filteredProductData);
 
 	return (
 		<Container style={{ paddingTop: "50px" }} fluid className="section">
@@ -52,19 +60,23 @@ const Home = () => {
 			<h1 className="section__header">Top Products</h1>{" "}
 			<Row>
 				<Col lg={9} xs={12} md={8} className="section__card">
-					{products &&
-						products.map((product) => (
+					{filteredProductData &&
+						filteredProductData.map((product) => (
 							<Card key={product.id} products={product} />
 						))}
 				</Col>{" "}
 				<Col className="section__sidebar" lg={3} xs={12} md={4}>
 					<SearchBar
+						orderBy={orderBy}
+						onSortByChange={(mySort) => setSortBy(mySort)}
+						onOrderByChange={(mySort) => setOrderBy(mySort)}
+						sortBy={sortBy}
 						sort={products}
 						query={query}
 						onQueryChange={(myQuery) => setQuery(myQuery)}
 					/>
-					{filteredProductData[1] &&
-						filteredProductData[1].map((product) => (
+					{filteredProductData &&
+						filteredProductData.map((product) => (
 							// <Card key={product.id} products={product} />
 							<div>
 								<p>{product.title}</p>

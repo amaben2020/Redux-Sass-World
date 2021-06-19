@@ -3,7 +3,15 @@ import "./../SASS/components/searchbar.scss";
 import SearchBarDescription from "./SearchBarDescription";
 import Sort from "./Sort";
 import { BsSearch } from "react-icons/bs";
-const SearchBar = ({ sort, query, onQueryChange }) => {
+const SearchBar = ({
+	sort,
+	query,
+	onQueryChange,
+	orderBy,
+	sortBy,
+	onSortByChange,
+	onOrderByChange,
+}) => {
 	return (
 		<>
 			<div className="searchbar">
@@ -26,7 +34,12 @@ const SearchBar = ({ sort, query, onQueryChange }) => {
 				fontStyle="italic"
 				text="Search and filter based on your needs ..."
 			/>
-			<Sort sort={sort} />
+			<Sort
+				orderBy={orderBy}
+				onSortByChange={onSortByChange}
+				onOrderByChange={onOrderByChange}
+				sortBy={sortBy}
+			/>
 		</>
 	);
 };

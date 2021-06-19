@@ -17,8 +17,12 @@
 		width: 13vw;
 		background-color: #fff;
 		color: black;
-		box-shadow: 0 1rem 0.5rem rgb(233, 233, 233);
+		box-shadow: 0 0.7rem 0.2rem rgb(233, 233, 233);
 		text-align: center;
+
+		&:hover {
+			box-shadow: 0 1rem 0.4rem rgb(233, 233, 233);
+		}
 
 		&-image {
 			height: 70%;
@@ -29,6 +33,7 @@
 			font-size: 1.4rem;
 			font-family: fantasy;
 			letter-spacing: 0.5px;
+			color: rgb(32, 32, 32);
 		}
 	}
 

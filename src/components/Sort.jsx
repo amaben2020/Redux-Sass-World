@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 import SortDropdown from "./SortDropdown";
 import { Button } from "react-bootstrap";
 import { AiFillCaretDown } from "react-icons/ai";
-const Sort = ({ sort }) => {
+const Sort = ({ sort, orderBy, onSortByChange, onOrderByChange, sortBy }) => {
 	const [toggle, setToggle] = useState(false);
 
 	const toggleHandler = () => {
@@ -31,7 +31,14 @@ const Sort = ({ sort }) => {
 				SORT <AiFillCaretDown />
 			</Button>
 
-			{toggle && <SortDropdown />}
+			{toggle && (
+				<SortDropdown
+					orderBy={orderBy}
+					onSortByChange={onSortByChange}
+					onOrderByChange={onOrderByChange}
+					sortBy={sortBy}
+				/>
+			)}
 		</div>
 	);
 };
