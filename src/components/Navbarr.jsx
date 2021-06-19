@@ -5,6 +5,7 @@ import "./../SASS/components/navbar.scss";
 import { FaCartArrowDown } from "react-icons/fa";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
+import logoImg from "./../images/logo.png";
 const Navbarr = () => {
 	const [show, setShow] = React.useState(false);
 	const showDropdown = () => {
@@ -23,7 +24,10 @@ const Navbarr = () => {
 	return (
 		<div className="navbar">
 			<Link to="/">
-				<div className="navbar__logo"> </div>
+				<div className="navbar__logo">
+					<img className="navbar__logo-image" src={logoImg} alt="logo" />
+					<p className="navbar__logo-text">Shop and enjoy....</p>
+				</div>
 			</Link>
 			<ul className="navbar__items">
 				<li className="navbar__items-1">Home</li>

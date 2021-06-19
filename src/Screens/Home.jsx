@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { postFetch } from "../Redux/PostActions.js";
 import Loading from "./../components/messages/Loading";
 import SearchBar from "./../components/SearchBar";
+import Hero from "../components/Hero";
 const Home = () => {
 	const [query, setQuery] = useState("");
 
@@ -43,7 +44,11 @@ const Home = () => {
 
 	return (
 		<Container style={{ paddingTop: "50px" }} fluid className="section">
-			{" "}
+			{/* <Row>
+				<Col lg={12}>
+					<Hero />
+				</Col>
+			</Row>  */}
 			<h1 className="section__header">Top Products</h1>{" "}
 			<Row>
 				<Col lg={9} xs={12} md={8} className="section__card">
