@@ -1,19 +1,41 @@
 .searchbar {
 	box-shadow: 0 1rem 1.8 rgb(77, 77, 77);
+	align-items: center;
+	display: flex;
 	&__input {
 		width: 20rem;
 		height: 3rem;
 		border-radius: 3px;
 		border: 1px solid gray;
+		padding: 0.5rem;
+
+		&:focus {
+			width: 25rem;
+			height: 4rem;
+			transition: all 0.4s ease-in-out;
+		}
 
 		&::placeholder {
 			font-style: italic;
 			text-align: center;
 		}
 
+		//search btn
+		&::-webkit-search-cancel-button {
+			// position: relative;
+			// right: 20px;
+			background-color: rgba(255, 0, 0, 0.856);
+			height: 1rem;
+			width: 1rem;
+		}
+
 		&:focus {
 			border: 1px solid gray;
 		}
+	}
+
+	&__icon {
+		margin-left: -2rem;
 	}
 
 	&__description {

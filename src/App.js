@@ -12,6 +12,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { MemoizedProductComponent } from "./Screens/ProductScreen.jsx";
 import Home from "./Screens/Home";
 import SignUp from "./Screens/SignUp";
+import UserScreen from "./Screens/UserScreen.jsx";
 
 function App() {
 	return (
@@ -23,6 +24,7 @@ function App() {
 						<Route path="/" exact component={Home} />
 						<Route path="/product/:id" component={MemoizedProductComponent} />
 						<Route path="/signup" component={SignUp} />
+						<Route path="/users" component={UserScreen} />
 						<ReactQueryDevtools />
 					</Layout>
 				</Switch>

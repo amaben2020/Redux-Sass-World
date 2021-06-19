@@ -6,17 +6,21 @@ import {
 	LOGIN_USER_SUCCESS,
 } from "./constants/UserConstants";
 
-export const addUser =
+export const addUserAction =
 	(
+		id,
 		email,
 		username,
 		password,
+		// name,
 		firstname,
 		lastname,
+		// address,
 		city,
 		street,
 		number,
 		zipcode,
+		// geolocation,
 		lat,
 		long,
 		phone
@@ -29,8 +33,10 @@ export const addUser =
 			// 	.get(`https://fakestoreapi.com/users`)
 			// 	.then((res) => dispatch({ type: ADD_USER_SUCCESS, payload: res.data }));
 
-			fetch("https://fakestoreapi.com/users", {
+			await fetch("https://fakestoreapi.com/users", {
 				method: "POST",
+				mode: "no-cors",
+
 				body: JSON.stringify({
 					email,
 					username,

@@ -8,7 +8,7 @@ const initialState = {
 	user: [],
 };
 
-export const singleProductReducer = (state = initialState, action = {}) => {
+export const addUserReducer = (state = initialState, action = {}) => {
 	switch (action.type) {
 		case ADD_USER_LOADING:
 			return {
@@ -19,13 +19,12 @@ export const singleProductReducer = (state = initialState, action = {}) => {
 			return {
 				loading: false,
 				success: true,
-				singleProduct: action.payload,
+				user: action.payload,
 			};
 
 		case ADD_USER_ERROR:
 			return {
 				loading: false,
-
 				error: action.payload,
 			};
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../components/Card";
 import { Row, Col, Container } from "react-bootstrap";
 import axios from "axios";
@@ -8,25 +8,38 @@ import { postFetch } from "../Redux/PostActions.js";
 import Loading from "./../components/messages/Loading";
 import SearchBar from "./../components/SearchBar";
 const Home = () => {
+	const [query, setQuery] = useState("");
+
 	const getPosts = () =>
 		axios.get("https://fakestoreapi.com/products").then((res) => res.data);
 
 	const { data: products, isLoading } = useQuery("posts", getPosts);
+	console.log(typeof products);
 
 	if (isLoading) {
 		return <Loading />;
 	}
 
-	// const getPosts = () =>
-	// 	axios
-	// 		.get("https://fakestoreapi.com/products?sort=desc")
-	// 		.then((res) => res.data);
+	// React.useEffect(() => {
+	// 	const filteredProductDataFunction = () => {
+	// 		const filteredProductData = Object.entries(products).filter(
+	// 			([key, product]) => {
+	// 				return product.title.toLowerCase().includes(query.toLowerCase());
+	// 			}
+	// 		);
+	// 	};
+	// }, []);
 
-	// const { data, isLoading } = useQuery("posts", getPosts);
+	const filteredProductData = Object.entries(products).filter(
+		([key, product]) => {
+			return (
+				product.category.toLowerCase().includes(query.toLowerCase()) ||
+				product.title.toLowerCase().includes(query.toLowerCase())
+			);
+		}
+	);
 
-	// if (isLoading) {
-	// 	return <Loading />;
-	// }
+	console.log(filteredProductData[1]);
 
 	return (
 		<Container style={{ paddingTop: "50px" }} fluid className="section">
@@ -40,7 +53,19 @@ const Home = () => {
 						))}
 				</Col>{" "}
 				<Col className="section__sidebar" lg={3} xs={12} md={4}>
-					<SearchBar sort={products} />
+					<SearchBar
+						sort={products}
+						query={query}
+						onQueryChange={(myQuery) => setQuery(myQuery)}
+					/>
+					{filteredProductData[1] &&
+						filteredProductData[1].map((product) => (
+							// <Card key={product.id} products={product} />
+							<div>
+								<p>{product.title}</p>
+								<img src={product.image} />
+							</div>
+						))}
 				</Col>
 			</Row>
 		</Container>

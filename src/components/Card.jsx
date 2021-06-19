@@ -9,17 +9,6 @@ import axios from "axios";
 const Card = ({ products, match }) => {
 	const id = products.id;
 
-	// const getSingleProduct = () => {
-	// 	axios
-	// 		.get(`https://fakestoreapi.com/products/${id}`)
-	// 		.then((res) => res.data);
-	// };
-
-	// const { data, isFetching, isLoading } = useQuery(
-	// 	"singleProduct",
-	// 	getSingleProduct
-	// );
-
 	return (
 		<Link to={`/product/${id}`} style={{ textDecoration: "none" }}>
 			<div className="card">

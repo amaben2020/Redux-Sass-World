@@ -1,8 +1,16 @@
 import { Dropdown } from "react-bootstrap";
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
-
+import SortDropdown from "./SortDropdown";
+import { Button } from "react-bootstrap";
+import { AiFillCaretDown } from "react-icons/ai";
 const Sort = ({ sort }) => {
+	const [toggle, setToggle] = useState(false);
+
+	const toggleHandler = () => {
+		setToggle(!toggle);
+	};
+
 	const sortFunction = () => {
 		fetch("https://fakestoreapi.com/products?sort=asc")
 			.then((res) => res.json())
@@ -14,21 +22,16 @@ const Sort = ({ sort }) => {
 
 	return (
 		<div>
-			<Dropdown size="lg">
-				<Dropdown.Toggle variant="success" id="dropdown-basic">
-					Sort{" "}
-				</Dropdown.Toggle>
+			<Button
+				style={{ padding: "1rem 1.7rem", background: "#000" }}
+				onClick={toggleHandler}
+				onMouseOver={toggleHandler}
+				variant="secondary"
+			>
+				SORT <AiFillCaretDown />
+			</Button>
 
-				<Dropdown.Menu>
-					<Dropdown.Item onClick={() => data} href="#/action-1">
-						Sort By Price
-					</Dropdown.Item>
-					<Dropdown.Item onClick={() => sort} href="#/action-2">
-						Sort by Alphabet
-					</Dropdown.Item>
-					<Dropdown.Item href="#/action-3">Sort by Category</Dropdown.Item>
-				</Dropdown.Menu>
-			</Dropdown>
+			{toggle && <SortDropdown />}
 		</div>
 	);
 };
