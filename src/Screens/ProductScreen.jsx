@@ -7,8 +7,8 @@ import Button from "../components/Button";
 import { fetchSingleProduct } from "../Redux/singleProduct/singleProductAction";
 import "./../SASS/page/singleProduct.scss";
 import "./../SASS/components/button.scss";
-import { Spinner } from "react-bootstrap";
 import Loading from "../components/messages/Loading";
+import LoadingSmall from "../components/messages/LoadingSmall";
 const ProductScreen = ({ match }) => {
 	const dispatch = useDispatch();
 	const { singleProduct, loading, error, success } = useSelector(
@@ -19,46 +19,17 @@ const ProductScreen = ({ match }) => {
 	console.log(match);
 
 	useEffect(() => {
-		let isFetched = true;
-		if (loading) {
-			return <Loading />;
-		} else if (isFetched && !success) {
-			dispatch(fetchSingleProduct(id));
-		}
-	}, [dispatch, success]);
+		dispatch(fetchSingleProduct(id));
+	}, [dispatch]);
+
 	console.log(singleProduct);
-
-	// const fetchProduct = () => {
-	// 	const id = match.params.id;
-	// 	fetch(`https://fakestoreapi.com/products`)
-	// 		.then((res) => res.json())
-	// 		.then((json) => json);
-	// };
-
-	// const fetchProduct = () => {
-	// 	const id = match.params.id;
-	// 	return axios
-	// 		.get(`https://fakestoreapi.com/products/${id}`)
-	// 		.then((res) => res.singleProduct?);
-	// };
-
-	// const { data, isLoading, isError } = useQuery("product", fetchProduct);
-
-	// if (isLoading) {
-	// 	return <Loading />;
-	// }
-
-	// if (isError) {
-	// 	return <p>Loading ....</p>;
-	// }
-
-	// console.log(data);
 
 	return (
 		<div className="product">
 			<Container>
 				<Row>
 					<Col lg={6} md={6}>
+						{loading && <Loading />}
 						<div className="singleProduct">
 							<h1 className="singleProduct__header">
 								{singleProduct?.title} - {singleProduct?.category}
@@ -72,6 +43,7 @@ const ProductScreen = ({ match }) => {
 
 					<Col lg={3} md={3}>
 						<div className="singleProduct__description">
+							{loading && <LoadingSmall />}
 							<p>{singleProduct?.description}</p>{" "}
 						</div>
 					</Col>
@@ -80,6 +52,7 @@ const ProductScreen = ({ match }) => {
 						<div className="singleProduct__bigcard">
 							<h2> Cart Items </h2>
 							price: ${singleProduct?.price}
+							{loading && <LoadingSmall />}
 							<button className="singleProduct__bigcard--button">
 								{" "}
 								Add To Cart

@@ -11,7 +11,7 @@ const Home = () => {
 	const getPosts = () =>
 		axios.get("https://fakestoreapi.com/products").then((res) => res.data);
 
-	const { data, isLoading } = useQuery("posts", getPosts);
+	const { data: products, isLoading } = useQuery("posts", getPosts);
 
 	if (isLoading) {
 		return <Loading />;
@@ -34,13 +34,13 @@ const Home = () => {
 			<h1 className="section__header">Top Products</h1>{" "}
 			<Row>
 				<Col lg={9} xs={12} md={8} className="section__card">
-					{data &&
-						data.map((products) => (
-							<Card key={products.id} products={products} />
+					{products &&
+						products.map((product) => (
+							<Card key={product.id} products={product} />
 						))}
 				</Col>{" "}
 				<Col className="section__sidebar" lg={3} xs={12} md={4}>
-					<SearchBar sort={data} />
+					<SearchBar sort={products} />
 				</Col>
 			</Row>
 		</Container>

@@ -9,6 +9,8 @@
   width: 50%;
   height: 30vh;
   margin-left: 7vw;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
 }
 .singleProduct__description {
   width: 90%;
