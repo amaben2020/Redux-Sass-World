@@ -1,5 +1,4 @@
 .searchbar {
-	box-shadow: 0 1rem 1.8 rgb(77, 77, 77);
 	align-items: center;
 	display: flex;
 	&__input {
@@ -8,16 +7,20 @@
 		border-radius: 3px;
 		border: 1px solid gray;
 		padding: 0.5rem;
+		margin-top: 1.5rem;
+		box-shadow: 0 0.2rem 1.2rem rgb(167, 167, 167);
 
 		&:focus {
 			width: 25rem;
 			height: 4rem;
-			transition: all 0.4s ease-in-out;
+			transition: all 0.6s ease-in-out;
+			box-shadow: 0 0.2rem 1.2rem rgba(214, 33, 33, 0.753);
 		}
 
 		&::placeholder {
 			font-style: italic;
 			text-align: center;
+			color: gray;
 		}
 
 		//search btn

@@ -1,37 +1,47 @@
 import React from "react";
 import { GrCheckmark } from "react-icons/gr";
 import "./../SASS/components/sortdropdown.scss";
-const SortDropdown = ({ orderBy, onSortByChange, onOrderByChange, sortBy }) => {
+const SortDropdown = ({
+	orderBy,
+	onSortByChange,
+	onOrderByChange,
+	sortBy,
+	onSortItemsByChange,
+	sortItemsByChange,
+}) => {
 	return (
 		<div className="sortDropdown">
 			<ul className="sortDropdown__items">
-				<li className="sortDropdown__items--1">
+				{/* <li
+					className="sortDropdown__items--1"
+					onClick={() => onSortByChange("title")}
+				>
 					{" "}
 					<div
 						className="sortDropdown__items--1"
-						onClick={() => onOrderByChange("price")}
+						onClick={() => onSortByChange("title")}
 					>
-						<div className="sortDropdown__items--1--text">Sort By Price </div>
+						<div className="sortDropdown__items--1--text">Sort By Title </div>
 						<div className="sortDropdown__items--1--check">
-							{orderBy === "price" && <GrCheckmark />}
+							{orderBy === "title" && <GrCheckmark />}
 						</div>
 					</div>
-				</li>
+				</li> */}
 
 				<li
 					className="sortDropdown__items--2"
-					onClick={() => onSortByChange("asc")}
+					onClick={() => onOrderByChange("asc")}
 				>
 					{" "}
 					<div className="sortDropdown__items--2">
 						<div
-							onClick={() => onSortByChange("asc")}
+							onClick={() => onOrderByChange("asc")}
 							className="sortDropdown__items--2--text"
 						>
-							Asc
+							Asc <span>Low - High</span>
 						</div>
 						<div
-							onClick={() => onSortByChange("desc")}
+							onClick={() => onOrderByChange("desc")}
 							className="sortDropdown__items--2--check"
 						>
 							{sortBy === "asc" && <GrCheckmark />}
@@ -41,14 +51,16 @@ const SortDropdown = ({ orderBy, onSortByChange, onOrderByChange, sortBy }) => {
 
 				<li
 					className="sortDropdown__items--3"
-					onClick={() => onSortByChange("desc")}
+					onClick={() => onOrderByChange("desc")}
 				>
 					{" "}
 					<div className="sortDropdown__items--3">
-						<div className="sortDropdown__items--3--text">Desc</div>
+						<div className="sortDropdown__items--3--text">
+							Desc <span>High - low</span>
+						</div>
 						<div
 							className="sortDropdown__items--3--check"
-							onClick={() => onSortByChange("desc")}
+							onClick={() => onOrderByChange("desc")}
 						>
 							{sortBy === "desc" && <GrCheckmark />}
 						</div>

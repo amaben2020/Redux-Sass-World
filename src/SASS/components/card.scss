@@ -12,6 +12,7 @@
 	animation: move 10s linear infinite;
 	animation-name: move-right;
 	animation-iteration-count: 9;
+	overflow: hidden;
 
 	&:hover {
 		transform: scaleY(1.01);
@@ -25,10 +26,14 @@
 		width: 90%;
 		height: 8rem;
 		margin-left: 1rem;
+		&:hover {
+			transform: scale(1.07);
+			transition: transform 0.5s;
+		}
 	}
 	&__holder {
 		background-color: rgba(224, 24, 24, 0.925);
-		width: 6rem;
+		width: 7rem;
 		height: 3rem;
 		position: absolute;
 		top: 5%;
@@ -36,6 +41,7 @@
 		display: flex;
 		text-align: center;
 		align-items: center;
+		z-index: 2;
 
 		&:hover {
 			background-color: rgba(128, 0, 128, 0.925);
@@ -66,22 +72,30 @@
 		&-2 {
 			padding: 0.3rem;
 		}
+
+		&-title {
+			color: rgba(224, 24, 24, 0.925);
+
+			&:hover {
+				color: rgba(128, 0, 128, 0.925);
+			}
+		}
 	}
 }
 
 @keyframes move-right {
 	0% {
 		transform: translate(0px);
-		opacity: 1;
+		// opacity: 1;
 	}
 
 	50% {
 		transform: translate(100px);
-		opacity: 0.8;
+		// opacity: 0.8;
 	}
 
 	100% {
 		transform: translate(200px);
-		opacity: 0.5;
+		// opacity: 0.5;
 	}
 }

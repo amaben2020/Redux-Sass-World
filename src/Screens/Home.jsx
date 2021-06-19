@@ -8,10 +8,13 @@ import { postFetch } from "../Redux/PostActions.js";
 import Loading from "./../components/messages/Loading";
 import SearchBar from "./../components/SearchBar";
 import Hero from "../components/Hero";
+import Category from "../components/Category";
 const Home = () => {
 	const [query, setQuery] = useState("");
-	const [sortBy, setSortBy] = useState("asc");
-	const [orderBy, setOrderBy] = useState("price");
+	const [sortBy, setSortBy] = useState("price");
+	const [sortItemsBy, setSortItemsBy] = useState("title");
+
+	const [orderBy, setOrderBy] = useState("asc");
 
 	const getPosts = () =>
 		axios.get("https://fakestoreapi.com/products").then((res) => res.data);
@@ -69,21 +72,18 @@ const Home = () => {
 					<SearchBar
 						orderBy={orderBy}
 						onSortByChange={(mySort) => setSortBy(mySort)}
+						onSortItemsByChange={(mySort) => setSortItemsBy(mySort)}
 						onOrderByChange={(mySort) => setOrderBy(mySort)}
 						sortBy={sortBy}
 						sort={products}
 						query={query}
+						sortItemsBy={sortItemsBy}
 						onQueryChange={(myQuery) => setQuery(myQuery)}
 					/>
-					{filteredProductData &&
-						filteredProductData.map((product) => (
-							// <Card key={product.id} products={product} />
-							<div>
-								<p>{product.title}</p>
-								<img src={product.image} />
-							</div>
-						))}
 				</Col>
+			</Row>
+			<Row lg={12}>
+				<Category />
 			</Row>
 		</Container>
 	);

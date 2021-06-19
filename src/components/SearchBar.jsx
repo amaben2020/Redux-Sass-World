@@ -11,6 +11,7 @@ const SearchBar = ({
 	sortBy,
 	onSortByChange,
 	onOrderByChange,
+	sortItemsBy,
 }) => {
 	return (
 		<>
@@ -39,6 +40,7 @@ const SearchBar = ({
 				onSortByChange={onSortByChange}
 				onOrderByChange={onOrderByChange}
 				sortBy={sortBy}
+				sortItemsBy={sortItemsBy}
 			/>
 		</>
 	);

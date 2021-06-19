@@ -18,8 +18,10 @@ const Card = ({ products, match }) => {
 				<img className="card__image" src={products.image} alt={image} />
 
 				<div className="card__price">
+					<p className="card__price-title">{products.title}...</p>
 					<p className="card__price-1">Price: </p>
-					<p className="card__price-2">{products.price}</p>
+
+					<p className="card__price-2">${products.price}</p>
 				</div>
 				<div className="card__promo">
 					<p>Up to 50% off</p>

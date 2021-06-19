@@ -4,21 +4,19 @@ import { useQuery } from "react-query";
 import SortDropdown from "./SortDropdown";
 import { Button } from "react-bootstrap";
 import { AiFillCaretDown } from "react-icons/ai";
-const Sort = ({ sort, orderBy, onSortByChange, onOrderByChange, sortBy }) => {
+const Sort = ({
+	sort,
+	orderBy,
+	onSortByChange,
+	onOrderByChange,
+	sortBy,
+	sortItemsBy,
+}) => {
 	const [toggle, setToggle] = useState(false);
 
 	const toggleHandler = () => {
 		setToggle(!toggle);
 	};
-
-	const sortFunction = () => {
-		fetch("https://fakestoreapi.com/products?sort=asc")
-			.then((res) => res.json())
-			.then((json) => console.log(json));
-	};
-
-	const { data, isLoading } = useQuery("sort", sortFunction);
-	console.log(data);
 
 	return (
 		<div>
@@ -28,7 +26,8 @@ const Sort = ({ sort, orderBy, onSortByChange, onOrderByChange, sortBy }) => {
 				onMouseOver={toggleHandler}
 				variant="secondary"
 			>
-				SORT <AiFillCaretDown />
+				<span style={{ marginRight: "0.4rem" }}> SORT BY PRICE </span>{" "}
+				<AiFillCaretDown />
 			</Button>
 
 			{toggle && (
@@ -37,6 +36,7 @@ const Sort = ({ sort, orderBy, onSortByChange, onOrderByChange, sortBy }) => {
 					onSortByChange={onSortByChange}
 					onOrderByChange={onOrderByChange}
 					sortBy={sortBy}
+					sortItemsBy={sortItemsBy}
 				/>
 			)}
 		</div>
