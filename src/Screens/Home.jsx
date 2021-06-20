@@ -11,6 +11,7 @@ import Hero from "../components/Hero";
 import Category from "../components/Category";
 import Jewelry from "../components/Jewelry";
 import Footer from "../components/Footer";
+import ReactPaginate from "react-paginate";
 const Home = () => {
 	const [query, setQuery] = useState("");
 	const [sortBy, setSortBy] = useState("price");
@@ -23,6 +24,24 @@ const Home = () => {
 
 	const { data: products, isLoading } = useQuery("posts", getPosts);
 	console.log(typeof products);
+
+	// /// PAGINATION LOGIC VERY EASY
+	// //The pagination state
+	// const [pageNumber, setPageNumber] = React.useState(0);
+
+	// //The pagination state appointmentData per page
+	// const productsPerPage = 4;
+
+	// // i.e 0 * 5; how many list items to display
+	// const pagesVisited = pageNumber * productsPerPage;
+
+	// const pageCount = Math.ceil(products.length / productsPerPage);
+
+	// // This function simply sets the pageNumber value to the selected button
+	// //i.e setPageNumber = 5; if there is 5 pageCount
+	// const changePage = ({ selected }) => {
+	// 	setPageNumber(selected);
+	// };
 
 	if (isLoading) {
 		return <Loading />;
@@ -42,8 +61,9 @@ const Home = () => {
 			console.log(sortBy);
 			return a[sortBy] < b[sortBy] ? -1 * order : 1 * order;
 		});
+	// 	.slice(pagesVisited, pagesVisited + productsPerPage);
 
-	console.log(filteredProductData);
+	// console.log(filteredProductData);
 
 	return (
 		<Container style={{ paddingTop: "50px" }} fluid className="section">
@@ -74,6 +94,19 @@ const Home = () => {
 					/>
 				</Col>
 			</Row>
+			{/* <div className="section__paginate">
+				<ReactPaginate
+					previousLabel={"Previous"}
+					nextLabel={"Next"}
+					pageCount={pageCount}
+					onPageChange={changePage}
+					containerClassName={"paginationBtns"}
+					previousLinkClassName={"previousBtns"}
+					nextLinkClassName={"nextBtns"}
+					disabledClassName={"paginationDisabled"}
+					activeClassName={"paginationActive"}
+				/>
+			</div> */}
 			{/* <Row lg={12}>
 				<Category />
 				<Jewelry />
