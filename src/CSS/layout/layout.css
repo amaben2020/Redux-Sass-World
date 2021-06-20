@@ -2,3 +2,9 @@
   max-width: 120rem;
   padding: 2rem;
 }
+@media only screen and (max-width: 56.25rem) {
+  .layout {
+    max-width: 90rem;
+    padding: 0.8rem;
+  }
+}

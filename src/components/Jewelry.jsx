@@ -7,13 +7,9 @@ const Jewelry = () => {
 		axios
 			.get("https://fakestoreapi.com/products/category/jewelery")
 			.then((res) => res.data);
-
-		// fetch("https://fakestoreapi.com/products/category/jewelery")
-		// 	.then((res) => res.json())
-		// 	.then((json) => console.log(json));
 	};
 	const { data: jewelry, isLoading } = useQuery("jewelry", getJewelry);
-	console.log(typeof jewelry);
+
 	return (
 		<div style={{ height: "200vh" }}>
 			{jewelry?.map((j) => (
@@ -23,10 +19,10 @@ const Jewelry = () => {
 				</div>
 			))}
 
-			{jewelry &&
+			{/* {jewelry &&
 				jewelry.map((jewelry) => {
 					return <p>{jewelry.title}</p>;
-				})}
+				})} */}
 		</div>
 	);
 };

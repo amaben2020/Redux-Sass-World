@@ -13,6 +13,7 @@ import { MemoizedProductComponent } from "./Screens/ProductScreen.jsx";
 import Home from "./Screens/Home";
 import SignUp from "./Screens/SignUp";
 import UserScreen from "./Screens/UserScreen.jsx";
+import AllUsersScreen from "./Screens/AllUsersScreen";
 
 function App() {
 	return (
@@ -25,6 +26,7 @@ function App() {
 						<Route path="/product/:id" component={MemoizedProductComponent} />
 						<Route path="/signup" component={SignUp} />
 						<Route path="/users" component={UserScreen} />
+						<Route path="/allusers" component={AllUsersScreen} />
 						<ReactQueryDevtools />
 					</Layout>
 				</Switch>

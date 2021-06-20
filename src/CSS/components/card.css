@@ -12,10 +12,20 @@
   animation: move 10s linear infinite;
   animation-name: move-right;
   animation-iteration-count: 9;
+  overflow: hidden;
+}
+@media only screen and (max-width: 56.25rem) {
+  .card {
+    animation-play-state: paused;
+    margin: 0.9rem;
+    height: 26rem;
+    width: 22rem;
+    flex-wrap: wrap;
+  }
 }
 .card:hover {
   transform: scaleY(1.01);
-  box-shadow: 0 1rem 1.8 #4d4d4d;
+  box-shadow: 0 1rem 1.8rem #4d4d4d;
 }
 .card__image {
   image-rendering: crisp-edges;
@@ -25,9 +35,13 @@
   height: 8rem;
   margin-left: 1rem;
 }
+.card__image:hover {
+  transform: scale(1.07);
+  transition: transform 0.5s;
+}
 .card__holder {
   background-color: rgba(224, 24, 24, 0.925);
-  width: 6rem;
+  width: 7rem;
   height: 3rem;
   position: absolute;
   top: 5%;
@@ -35,6 +49,7 @@
   display: flex;
   text-align: center;
   align-items: center;
+  z-index: 2;
 }
 .card__holder:hover {
   background-color: rgba(128, 0, 128, 0.925);
@@ -61,18 +76,21 @@
 .card__price-1, .card__price-2 {
   padding: 0.3rem;
 }
+.card__price-title {
+  color: rgba(224, 24, 24, 0.925);
+}
+.card__price-title:hover {
+  color: rgba(128, 0, 128, 0.925);
+}
 
 @keyframes move-right {
   0% {
     transform: translate(0px);
-    opacity: 1;
   }
   50% {
     transform: translate(100px);
-    opacity: 0.8;
   }
   100% {
     transform: translate(200px);
-    opacity: 0.5;
   }
 }

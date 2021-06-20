@@ -37,9 +37,20 @@
 		}
 	}
 
+	&__link,
+	&__link:visited {
+		text-decoration: none;
+	}
+
 	&__items {
 		display: flex;
 		align-items: center;
+		//removing Link style
+		a,
+		a:visited {
+			text-decoration: none;
+			color: #fff;
+		}
 
 		&-1,
 		&-2,
@@ -50,10 +61,12 @@
 			justify-content: space-around;
 			padding: 1rem;
 			position: relative;
+			text-decoration: none;
 
 			&:hover {
 				color: gray;
 				cursor: pointer;
+				text-decoration: none;
 			}
 		}
 	}

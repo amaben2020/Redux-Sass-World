@@ -1,0 +1,37 @@
+.sortDropdown {
+  width: 17rem;
+  height: 8rem;
+  box-shadow: 0 0.2rem 0.7rem #4d4d4d;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  justify-content: center;
+  margin-top: 0.6rem;
+  border-radius: 3px;
+}
+.sortDropdown__items {
+  list-style: none;
+  width: 100%;
+}
+.sortDropdown__items--1, .sortDropdown__items--2, .sortDropdown__items--3 {
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+  padding: 0.3rem;
+}
+.sortDropdown__items--1--text, .sortDropdown__items--2--text, .sortDropdown__items--3--text {
+  font-size: 1.01rem;
+}
+.sortDropdown__items--1--check, .sortDropdown__items--2--check, .sortDropdown__items--3--check {
+  margin-left: auto;
+}
+.sortDropdown__items--1:hover, .sortDropdown__items--2:hover, .sortDropdown__items--3:hover {
+  color: black;
+  transition: all 0.1s ease;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.3rem;
+}
+.sortDropdown:hover {
+  box-shadow: 0 0.6rem 1.3rem #4d4d4d;
+}

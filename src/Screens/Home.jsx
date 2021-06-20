@@ -10,6 +10,7 @@ import SearchBar from "./../components/SearchBar";
 import Hero from "../components/Hero";
 import Category from "../components/Category";
 import Jewelry from "../components/Jewelry";
+import Footer from "../components/Footer";
 const Home = () => {
 	const [query, setQuery] = useState("");
 	const [sortBy, setSortBy] = useState("price");
@@ -26,16 +27,6 @@ const Home = () => {
 	if (isLoading) {
 		return <Loading />;
 	}
-
-	// React.useEffect(() => {
-	// 	const filteredProductDataFunction = () => {
-	// 		const filteredProductData = Object.entries(products).filter(
-	// 			([key, product]) => {
-	// 				return product.title.toLowerCase().includes(query.toLowerCase());
-	// 			}
-	// 		);
-	// 	};
-	// }, []);
 
 	const filteredProductData = Object.values(products)
 		.filter((product) => {
@@ -63,13 +54,13 @@ const Home = () => {
 			</Row>  */}
 			<h1 className="section__header">Top Products</h1>{" "}
 			<Row>
-				<Col lg={9} xs={12} md={8} className="section__card">
+				<Col lg={9} xs={12} md={10} sm={12} className="section__card">
 					{filteredProductData &&
 						filteredProductData?.map((product) => (
 							<Card key={product.id} products={product} />
 						))}
 				</Col>{" "}
-				<Col className="section__sidebar" lg={3} xs={12} md={4}>
+				<Col className="section__sidebar" lg={3} xs={12} md={2} sm={12}>
 					<SearchBar
 						orderBy={orderBy}
 						onSortByChange={(mySort) => setSortBy(mySort)}
@@ -83,10 +74,11 @@ const Home = () => {
 					/>
 				</Col>
 			</Row>
-			<Row lg={12}>
+			{/* <Row lg={12}>
 				<Category />
 				<Jewelry />
-			</Row>
+			</Row> */}
+			<Footer />
 		</Container>
 	);
 };

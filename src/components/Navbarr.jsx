@@ -30,9 +30,20 @@ const Navbarr = () => {
 				</div>
 			</Link>
 			<ul className="navbar__items">
-				<li className="navbar__items-1">Home</li>
-				<li className="navbar__items-2">About</li>
-				<li className="navbar__items-3">Courses</li>
+				<Link to="/">
+					{" "}
+					<li className="navbar__items-1">Home</li>{" "}
+				</Link>
+
+				<Link to="/">
+					<li className="navbar__items-2">About</li>
+				</Link>
+
+				<Link to="/allusers">
+					{" "}
+					<li className="navbar__items-3">Admin</li>{" "}
+				</Link>
+
 				{/* <LinkContainer to="/signup">
 					<Nav.Link style={{ color: "white" }} >
 						Sign Up
@@ -49,7 +60,7 @@ const Navbarr = () => {
 						Sign Up{" "}
 					</Link>{" "}
 				</li>
-				<NavDropdown
+				{/* <NavDropdown
 					style={{ color: "white" }}
 					show={show}
 					onMouseEnter={showDropdown}
@@ -62,7 +73,7 @@ const Navbarr = () => {
 					<NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
 					<NavDropdown.Divider />
 					<NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-				</NavDropdown>
+				</NavDropdown> */}
 			</ul>
 
 			<FaCartArrowDown onClick={toggler} />

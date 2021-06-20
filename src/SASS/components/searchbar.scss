@@ -1,6 +1,9 @@
 .searchbar {
 	align-items: center;
 	display: flex;
+	@media only screen and (max-width: 56.25rem) {
+		flex-direction: column;
+	}
 	&__input {
 		width: 20rem;
 		height: 3rem;
@@ -9,6 +12,9 @@
 		padding: 0.5rem;
 		margin-top: 1.5rem;
 		box-shadow: 0 0.2rem 1.2rem rgb(167, 167, 167);
+		@media only screen and (max-width: 56.25rem) {
+			width: 15rem;
+		}
 
 		&:focus {
 			width: 25rem;

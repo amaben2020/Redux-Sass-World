@@ -15,6 +15,11 @@
 .section {
   text-align: center;
 }
+@media only screen and (max-width: 56.25rem) {
+  .section {
+    margin-left: -4rem;
+  }
+}
 .section__card {
   display: flex;
   flex-wrap: nowrap;
@@ -25,8 +30,13 @@
   margin: 2rem;
 }
 @media only screen and (max-width: 56.25rem) {
+  .section__card__sidebar {
+    margin: 0.7rem;
+  }
+}
+@media only screen and (max-width: 56.25rem) {
   .section__card {
-    flex-direction: column;
+    flex-wrap: wrap;
   }
 }
 .section__heading {
