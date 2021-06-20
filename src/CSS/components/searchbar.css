@@ -2,9 +2,9 @@
   align-items: center;
   display: flex;
 }
-@media only screen and (max-width: 56.25rem) {
+@media only screen and (max-width: 62rem) {
   .searchbar {
-    flex-direction: column;
+    margin-left: -6vw;
   }
 }
 .searchbar__input {

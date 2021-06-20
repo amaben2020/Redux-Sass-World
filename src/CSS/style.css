@@ -26,6 +26,13 @@
   overflow-x: auto;
   transition: all 0.2s;
 }
+@media only screen and (max-width: 62rem) {
+  .section__card {
+    width: 100%;
+    overflow-x: hidden;
+    flex-wrap: wrap;
+  }
+}
 .section__card__sidebar {
   margin: 2rem;
 }
@@ -34,7 +41,13 @@
     margin: 0.7rem;
   }
 }
-@media only screen and (max-width: 56.25rem) {
+@media only screen and (max-width: 62rem) {
+  .section__card__sidebar {
+    margin: 0.5rem;
+    order: 0;
+  }
+}
+@media only screen and (max-width: 62rem) {
   .section__card {
     flex-wrap: wrap;
   }

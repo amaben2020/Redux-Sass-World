@@ -24,15 +24,27 @@
 		overflow-x: auto;
 		transition: all 0.2s;
 
+		@media only screen and (max-width: 62rem) {
+			// margin-right: 5rem;
+			width: 100%;
+			overflow-x: hidden;
+			flex-wrap: wrap;
+		}
+
 		&__sidebar {
 			margin: 2rem;
 
 			@media only screen and (max-width: 56.25rem) {
 				margin: 0.7rem;
 			}
+
+			@media only screen and (max-width: 62rem) {
+				margin: 0.5rem;
+				order: 0;
+			}
 		}
 
-		@media only screen and (max-width: 56.25rem) {
+		@media only screen and (max-width: 62rem) {
 			flex-wrap: wrap;
 		}
 	}

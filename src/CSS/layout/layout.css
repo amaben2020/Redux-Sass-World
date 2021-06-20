@@ -8,3 +8,9 @@
     padding: 0.8rem;
   }
 }
+@media only screen and (max-width: 62rem) {
+  .layout {
+    max-width: 80rem;
+    padding: 1rem;
+  }
+}

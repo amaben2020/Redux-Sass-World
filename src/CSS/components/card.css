@@ -14,7 +14,7 @@
   animation-iteration-count: 9;
   overflow: hidden;
 }
-@media only screen and (max-width: 56.25rem) {
+@media only screen and (max-width: 62rem) {
   .card {
     animation-play-state: paused;
     margin: 0.9rem;

@@ -6,4 +6,10 @@
 		max-width: 90rem;
 		padding: 0.8rem;
 	}
+
+	@media only screen and (max-width: 62rem) {
+		// margin-right: 5rem;
+		max-width: 80rem;
+		padding: 1rem;
+	}
 }

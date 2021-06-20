@@ -1,9 +1,14 @@
 .searchbar {
 	align-items: center;
 	display: flex;
-	@media only screen and (max-width: 56.25rem) {
-		flex-direction: column;
+	// @media only screen and (max-width: 56.25rem) {
+	// 	flex-direction: column;
+	// }
+
+	@media only screen and (max-width: 62rem) {
+		margin-left: -6vw;
 	}
+
 	&__input {
 		width: 20rem;
 		height: 3rem;

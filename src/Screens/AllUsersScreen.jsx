@@ -1,6 +1,7 @@
 import { data } from "jquery";
 import React from "react";
 import { Container, Col, Table } from "react-bootstrap";
+
 import { useDispatch, useSelector } from "react-redux";
 import { getUserAction } from "../Redux/UserActions";
 import "./../SASS/components/admin-table.scss";
