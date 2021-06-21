@@ -34,6 +34,12 @@
 		&__sidebar {
 			margin: 2rem;
 
+			// @media only screen and (max-width: var(--bp-med-small)) {
+			// 	display: flex;
+			// 	order: 0;
+			// 	display: none;
+			// }
+
 			@media only screen and (max-width: 56.25rem) {
 				margin: 0.7rem;
 			}

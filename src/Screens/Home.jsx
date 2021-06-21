@@ -25,23 +25,15 @@ const Home = () => {
 	const { data: products, isLoading } = useQuery("posts", getPosts);
 	console.log(typeof products);
 
-	// /// PAGINATION LOGIC VERY EASY
-	// //The pagination state
-	// const [pageNumber, setPageNumber] = React.useState(0);
+	/// PAGINATION LOGIC VERY EASY
+	//The pagination state
+	const [pageNumber, setPageNumber] = React.useState(0);
 
-	// //The pagination state appointmentData per page
-	// const productsPerPage = 4;
+	//The pagination state appointmentData per page
+	const productsPerPage = 4;
 
-	// // i.e 0 * 5; how many list items to display
-	// const pagesVisited = pageNumber * productsPerPage;
-
-	// const pageCount = Math.ceil(products.length / productsPerPage);
-
-	// // This function simply sets the pageNumber value to the selected button
-	// //i.e setPageNumber = 5; if there is 5 pageCount
-	// const changePage = ({ selected }) => {
-	// 	setPageNumber(selected);
-	// };
+	// i.e 0 * 5; how many list items to display
+	const pagesVisited = pageNumber * productsPerPage;
 
 	if (isLoading) {
 		return <Loading />;
@@ -60,10 +52,20 @@ const Home = () => {
 			console.log(order);
 			console.log(sortBy);
 			return a[sortBy] < b[sortBy] ? -1 * order : 1 * order;
-		});
-	// 	.slice(pagesVisited, pagesVisited + productsPerPage);
+		})
+		.slice(pagesVisited, pagesVisited + productsPerPage);
 
-	// console.log(filteredProductData);
+	console.log(filteredProductData);
+
+	//if you put above the filteredData, the products length would hve changed
+	const pageCount = Math.ceil(products.length / productsPerPage);
+	console.log(products.length / 4);
+
+	// This function simply sets the pageNumber value to the selected button
+	//i.e setPageNumber = 5; if there is 5 pageCount
+	const changePage = ({ selected }) => {
+		setPageNumber(selected);
+	};
 
 	return (
 		<Container style={{ paddingTop: "50px" }} fluid className="section">
@@ -80,7 +82,13 @@ const Home = () => {
 							<Card key={product.id} products={product} />
 						))}
 				</Col>{" "}
-				<Col className="section__sidebar" lg={3} xs={12} md={2} sm={12}>
+				<Col
+					className="section__sidebar  d-none d-md-block"
+					lg={3}
+					xs={12}
+					md={2}
+					sm={12}
+				>
 					<SearchBar
 						orderBy={orderBy}
 						onSortByChange={(mySort) => setSortBy(mySort)}
@@ -94,7 +102,7 @@ const Home = () => {
 					/>
 				</Col>
 			</Row>
-			{/* <div className="section__paginate">
+			<div className="section__paginate">
 				<ReactPaginate
 					previousLabel={"Previous"}
 					nextLabel={"Next"}
@@ -106,7 +114,7 @@ const Home = () => {
 					disabledClassName={"paginationDisabled"}
 					activeClassName={"paginationActive"}
 				/>
-			</div> */}
+			</div>
 			{/* <Row lg={12}>
 				<Category />
 				<Jewelry />
