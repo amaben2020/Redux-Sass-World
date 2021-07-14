@@ -63,8 +63,8 @@ const Home = () => {
 	const pageCount = Math.ceil(products.length / productsPerPage);
 	console.log(products.length / 4);
 
-	// This function simply sets the pageNumber value to the selected button
-	//i.e setPageNumber = 5; if there is 5 pageCount
+	// // This function simply sets the pageNumber value to the selected button
+	// //i.e setPageNumber = 5; if there is 5 pageCount
 	const changePage = ({ selected }) => {
 		setPageNumber(selected);
 	};
@@ -84,7 +84,6 @@ const Home = () => {
 					lg={3}
 					xs={12}
 					md={2}
-					sm={12}
 				>
 					<SearchBar
 						orderBy={orderBy}
