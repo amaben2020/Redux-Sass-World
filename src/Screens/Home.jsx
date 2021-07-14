@@ -69,17 +69,8 @@ const Home = () => {
 		setPageNumber(selected);
 	};
 
-	// if (isSuccess) {
-	// 	return <ToastBody success />;
-	// }
-
 	return (
 		<Container style={{ paddingTop: '50px' }} fluid className='section'>
-			{/* <Row>
-				<Col lg={12}>
-					<Hero />
-				</Col>
-			</Row>  */}
 			<h1 className='section__header'>Top Products</h1>{' '}
 			<Row style={{ position: 'relative' }}>
 				<Col lg={9} xs={12} md={10} sm={12} className='section__card'>
