@@ -84,7 +84,6 @@ const Home = () => {
 					lg={3}
 					xs={12}
 					md={2}
-					sm={12}
 				>
 					<SearchBar
 						orderBy={orderBy}
