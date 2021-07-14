@@ -1,0 +1,36 @@
+.paginationBtns {
+	display: flex;
+	list-style: none;
+	text-align: center;
+	align-content: center;
+	padding-left: 23vw;
+}
+
+a {
+	list-style: none;
+	padding: 1rem;
+	border: none;
+	color: black;
+	font-weight: 700;
+	margin: 0.5rem;
+
+	display: inline-block;
+	&:hover {
+		padding: 1rem;
+		font-weight: 500;
+	}
+}
+
+.previousBtns,
+.nextBtns {
+	padding: 1rem;
+	border: none;
+	color: black;
+	background-color: rgba(102, 51, 153, 0.233);
+}
+
+.paginationActive {
+	padding: 1.3rem;
+	color: rgba(255, 0, 0, 0.877);
+	background-color: rgba(102, 51, 153, 0.233);
+}

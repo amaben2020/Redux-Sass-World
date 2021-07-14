@@ -1,17 +1,18 @@
-import React from "react";
-import "./../SASS/components/button.scss";
+import React from 'react';
+import './../SASS/components/button.scss';
 const Button = (props) => {
+	const className = `button`;
 	return (
-		<div className="button">
+		<div className={className}>
 			<button
 				style={{
 					// background: `${props.color}`,
-					padding: `${props.large}` ? "1rem 2rem" : "1rem 1.8rem",
+					padding: `${props.large}` ? '1rem 2rem' : '1rem 1.8rem',
 				}}
-				className="button-btn"
+				className='button-btn'
 			>
 				{props.name}
-			</button>{" "}
+			</button>{' '}
 		</div>
 	);
 };

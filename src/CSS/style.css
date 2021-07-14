@@ -31,6 +31,7 @@
     width: 100%;
     overflow-x: hidden;
     flex-wrap: wrap;
+    order: 2;
   }
 }
 .section__card__sidebar {
@@ -44,7 +45,8 @@
 @media only screen and (max-width: 62rem) {
   .section__card__sidebar {
     margin: 0.5rem;
-    order: 0;
+    display: flex;
+    order: 1;
   }
 }
 @media only screen and (max-width: 62rem) {
@@ -63,5 +65,11 @@
 @media only screen and (max-width: 62rem) {
   .section__paginate {
     display: flex;
+  }
+}
+@media only screen and (max-width: 62rem) {
+  .section .col-lg-3 {
+    margin-left: 20vw;
+    width: 50%;
   }
 }

@@ -1,11 +1,18 @@
-import DropDown from "./DropDown";
-import React from "react";
-import { NavDropdown, Nav } from "react-bootstrap";
-import "./../SASS/components/navbar.scss";
-import { FaCartArrowDown } from "react-icons/fa";
-import { LinkContainer } from "react-router-bootstrap";
-import { Link } from "react-router-dom";
-import logoImg from "./../images/logo.png";
+import DropDown from './DropDown';
+import React from 'react';
+import { NavDropdown, Nav } from 'react-bootstrap';
+import './../SASS/components/navbar.scss';
+import { FaCartArrowDown } from 'react-icons/fa';
+import { LinkContainer } from 'react-router-bootstrap';
+import { Link } from 'react-router-dom';
+import logoImg from './../images/logo.png';
+import SideNav, {
+	Toggle,
+	Nav as Navv,
+	NavItem,
+	NavIcon,
+	NavText,
+} from '@trendmicro/react-sidenav';
 const Navbarr = () => {
 	const [show, setShow] = React.useState(false);
 	const showDropdown = () => {
@@ -22,45 +29,46 @@ const Navbarr = () => {
 	};
 
 	return (
-		<div className="navbar">
-			<Link to="/">
-				<div className="navbar__logo">
-					<img className="navbar__logo-image" src={logoImg} alt="logo" />
-					<p className="navbar__logo-text">Shop and enjoy....</p>
-				</div>
-			</Link>
-			<ul className="navbar__items">
-				<Link to="/">
-					{" "}
-					<li className="navbar__items-1">Home</li>{" "}
+		<>
+			<div className='navbar'>
+				<Link to='/'>
+					<div className='navbar__logo'>
+						<img className='navbar__logo-image' src={logoImg} alt='logo' />
+						<p className='navbar__logo-text'>Shop and enjoy....</p>
+					</div>
 				</Link>
+				<ul className='navbar__items'>
+					<Link to='/'>
+						{' '}
+						<li className='navbar__items-1'>Home</li>{' '}
+					</Link>
 
-				<Link to="/">
-					<li className="navbar__items-2">About</li>
-				</Link>
+					<Link to='/'>
+						<li className='navbar__items-2'>About</li>
+					</Link>
 
-				<Link to="/allusers">
-					{" "}
-					<li className="navbar__items-3">Admin</li>{" "}
-				</Link>
+					<Link to='/allusers'>
+						{' '}
+						<li className='navbar__items-3'>Admin</li>{' '}
+					</Link>
 
-				{/* <LinkContainer to="/signup">
+					{/* <LinkContainer to="/signup">
 					<Nav.Link style={{ color: "white" }} >
 						Sign Up
 					</Nav.Link>
 				</LinkContainer> */}
-				<li className="navbar__items-4">
-					{" "}
-					<Link
-						style={{ color: "white", textDecoration: "none" }}
-						className="navbar__items-4"
-						to="/signup"
-					>
-						{" "}
-						Sign Up{" "}
-					</Link>{" "}
-				</li>
-				{/* <NavDropdown
+					<li className='navbar__items-4'>
+						{' '}
+						<Link
+							style={{ color: 'white', textDecoration: 'none' }}
+							className='navbar__items-4'
+							to='/signup'
+						>
+							{' '}
+							Sign Up{' '}
+						</Link>{' '}
+					</li>
+					{/* <NavDropdown
 					style={{ color: "white" }}
 					show={show}
 					onMouseEnter={showDropdown}
@@ -74,11 +82,12 @@ const Navbarr = () => {
 					<NavDropdown.Divider />
 					<NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
 				</NavDropdown> */}
-			</ul>
+				</ul>
 
-			<FaCartArrowDown onClick={toggler} />
-			{toggleCartDropdown && <DropDown />}
-		</div>
+				{/* <FaCartArrowDown onClick={toggler} />
+			{toggleCartDropdown && <DropDown />} */}
+			</div>
+		</>
 	);
 };
 

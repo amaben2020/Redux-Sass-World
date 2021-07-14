@@ -22,6 +22,14 @@
 		flex-wrap: wrap;
 	}
 
+	@media only screen and (max-width: 56rem) {
+		animation-play-state: paused;
+		margin: 0.5rem;
+		height: 22rem;
+		width: 20rem;
+		flex-wrap: wrap;
+	}
+
 	&:hover {
 		transform: scaleY(1.01);
 		box-shadow: 0 1rem 1.8rem rgb(77, 77, 77);

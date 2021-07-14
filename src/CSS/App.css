@@ -6,6 +6,7 @@
 @import url(./page/hero.scss);
 @import url(./components/admin-table.scss);
 @import url(./components/footer.scss);
+@import url(./custom.scss);
 .layout {
   max-width: 1200px;
 }
@@ -39,6 +40,7 @@
     width: 100%;
     overflow-x: hidden;
     flex-wrap: wrap;
+    order: 2;
   }
 }
 .section__card__sidebar {
@@ -52,7 +54,8 @@
 @media only screen and (max-width: 62rem) {
   .section__card__sidebar {
     margin: 0.5rem;
-    order: 0;
+    display: flex;
+    order: 1;
   }
 }
 @media only screen and (max-width: 62rem) {
@@ -71,6 +74,12 @@
 @media only screen and (max-width: 62rem) {
   .section__paginate {
     display: flex;
+  }
+}
+@media only screen and (max-width: 62rem) {
+  .section .col-lg-3 {
+    margin-left: 20vw;
+    width: 50%;
   }
 }
 
@@ -96,6 +105,15 @@
     margin: 0.9rem;
     height: 26rem;
     width: 22rem;
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 56rem) {
+  .card {
+    animation-play-state: paused;
+    margin: 0.5rem;
+    height: 22rem;
+    width: 20rem;
     flex-wrap: wrap;
   }
 }

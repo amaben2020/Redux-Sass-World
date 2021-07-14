@@ -1,0 +1,9 @@
+// Override default variables before the import
+$body-bg: rgb(170, 149, 149);
+
+// Import Bootstrap and its default variables
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// .col-lg-3 {
+// 	display: none;
+// }

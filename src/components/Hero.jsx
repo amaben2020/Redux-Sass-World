@@ -2,17 +2,8 @@ import React from "react";
 import { Carousel } from "react-bootstrap";
 import image1 from "./../images/nvidia1070.jpg";
 import "./../SASS/page/hero.scss";
-import ReactPaginate from "react-paginate";
+
 const Hero = () => {
-	/// PAGINATION LOGIC VERY EASY
-	//The pagination state
-	const [pageNumber, setPageNumber] = React.useState(0);
-
-	//The pagination state appointmentData per page
-	const appointmentDataPerPage = 4;
-
-	// i.e 0 * 5; how many list items to display
-	const pagesVisited = pageNumber * appointmentDataPerPage;
 	return (
 		<div className="hero">
 			<Carousel>

@@ -7,17 +7,19 @@
   padding: 1.5rem;
   justify-content: center;
   margin-top: 0.6rem;
-  border-radius: 3px;
+  border-radius: 13px 0 0 0;
 }
 .sortDropdown__items {
   list-style: none;
   width: 100%;
+  position: relative;
 }
 .sortDropdown__items--1, .sortDropdown__items--2, .sortDropdown__items--3 {
   display: flex;
   width: 100%;
   cursor: pointer;
   padding: 0.3rem;
+  position: relative;
 }
 .sortDropdown__items--1--text, .sortDropdown__items--2--text, .sortDropdown__items--3--text {
   font-size: 1.01rem;
@@ -31,6 +33,16 @@
   font-size: 1.2rem;
   font-weight: 600;
   padding: 0.3rem;
+}
+.sortDropdown__items::before {
+  content: "";
+  width: 5px;
+  background-color: gray;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: transform 0.2s, width 0.4s, cubic-bezier(1, 0, 0, 1) 0.2s;
 }
 .sortDropdown:hover {
   box-shadow: 0 0.6rem 1.3rem #4d4d4d;

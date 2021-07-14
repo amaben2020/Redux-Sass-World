@@ -7,11 +7,12 @@
 	padding: 1.5rem;
 	justify-content: center;
 	margin-top: 0.6rem;
-	border-radius: 3px;
+	border-radius: 13px 0 0 0;
 
 	&__items {
 		list-style: none;
 		width: 100%;
+		position: relative;
 
 		&--1,
 		&--2,
@@ -20,6 +21,7 @@
 			width: 100%;
 			cursor: pointer;
 			padding: 0.3rem;
+			position: relative;
 
 			&--text {
 				font-size: 1.01rem;
@@ -36,6 +38,17 @@
 				padding: 0.3rem;
 			}
 		}
+	}
+
+	&__items::before {
+		content: "";
+		width: 5px;
+		background-color: gray;
+		position: absolute;
+		height: 100%;
+		top: 0;
+		left: 0;
+		transition: transform 0.2s, width 0.4s, cubic-bezier(1, 0, 0, 1) 0.2s;
 	}
 
 	&:hover {
