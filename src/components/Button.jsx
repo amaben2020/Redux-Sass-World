@@ -1,7 +1,7 @@
 import React from 'react';
 import './../SASS/components/button.scss';
 const Button = (props) => {
-	const className = `button`;
+	const className = `button ${props.type}`;
 	return (
 		<div className={className}>
 			<button

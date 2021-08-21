@@ -90,7 +90,7 @@ export const getUserAction = () => async (dispatch) => {
 	dispatch({ type: GET_USER_LOADING });
 
 	try {
-		await fetch("https://fakestoreapi.com/users")
+		await fetch("https://reqres.in/api/register")
 			.then((res) => res.json())
 
 			.then((json) => dispatch({ type: GET_USER_SUCCESS, payload: json }));
